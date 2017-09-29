@@ -250,7 +250,7 @@ rawBody = do
 
 -- | Get the request body as a Text. However consumes the entire body at once.
 -- TODO: Implement streaming. Prevent clash with direct use of `Network.Wai.requestBody`
-textBody :: HandlerM master master Text
+textBody :: HandlerM sub master Text
 textBody = liftM decodeUtf8 rawBody
 
 -- PRIVATE
